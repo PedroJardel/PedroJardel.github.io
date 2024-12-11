@@ -1,45 +1,13 @@
-:root {
-  --bg-primary: #19191B;
-  --vue: #42B883;
-  --nuxt: #00DC82;
-  --nest: #E0234E;
-  --node: #5FA04E;
-  --ts: #3178C6;
-  --js: #F7DF1E;
-  --prisma: #D2D2D2;
-  --postgres: #336791;
-  --docker: #1D63ED;
-
-  /* Shadow */
-  --bg-primary-shadow: #19191B4D;
-  --vue-shadow: #42B8834D;
-  --nuxt-shadow: #00DC824D;
-  --nest-shadow: #E0234E4D;
-  --node-shadow: #5FA04E4D;
-  --ts-shadow: #3178C64D;
-  --js-shadow: #F7DF1E4D;
-  --prisma-shadow: #D2D2D24D;
-  --postgres-shadow: #3367914D;
-  --docker-shadow: #1D63ED4D;
-}
-
 body {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-primary);
-  background-image: url('../assets/background.png');
+  background-color: #19191B;
+  background-image: url("../assets/background.png");
   background-size: cover;
   background-repeat: repeat-y;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1040px;
 }
 
 header {
@@ -47,24 +15,13 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  z-index: 1;
-  position: sticky;
-  top: 0;
-  background-color: var(--bg-primary-shadow);
 }
-
-.container-nav {
-  display: flex;
-  width: 1040px;
-}
-
- nav {
+header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
-
- .curriculo {
+}
+header nav a.curriculo {
   height: 2.5rem;
   color: white;
   background-color: #5454D4;
@@ -74,40 +31,56 @@ header {
   padding: 4px 20px;
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
- }
-
- .curriculo:hover {
-  cursor: pointer;
-  box-shadow: 0 0 15px #5454D4;
- }
-
-.navbar--items {
+}
+header nav ul {
   display: flex;
   gap: 2rem;
   font-size: 1.25rem;
   color: white;
 }
-
-.navbar--items li a, .redes a {
+header nav ul li a {
   color: white;
   transition: text-shadow 0.3s ease-in-out;
 }
-
-.navbar--items li a:hover {
-text-shadow: 0 0 15px white;
-}
-
-.redes {
+header nav div.redes {
   display: flex;
   gap: 2.5rem;
+}
+header nav div.redes a {
   color: white;
+  transition: text-shadow 0.3s ease-in-out;
+}
+header nav div.menu_burger {
+  display: none;
+  color: white;
+  cursor: pointer;
 }
 
-.redes svg:hover {
+.container, .container-nav {
+  display: flex;
+  width: 100%;
+  max-width: 1040px;
+}
+
+.container {
+  flex-direction: column;
+}
+
+.curriculo:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px #5454D4;
+}
+
+ul li a:hover {
+  text-shadow: 0 0 15px white;
+}
+
+.menu_burger svg:hover, .redes svg:hover {
   cursor: pointer;
   transition: scale 0.3s ease-in-out;
-  scale: 1.10;
+  scale: 1.1;
 }
+
 .profile {
   display: flex;
   justify-content: space-between;
@@ -158,25 +131,19 @@ text-shadow: 0 0 15px white;
 }
 
 @keyframes change-text {
-  0%,
-  33% {
+  0%, 33% {
     content: "Full Stack Node";
     color: white;
   }
-
-  34%,
-  66% {
+  34%, 66% {
     content: "Front-End Vue | Nuxt";
-    color: var(--nuxt);
+    color: #00DC82;
   }
-  
-  67%,
-  100% {
+  67%, 100% {
     content: "Back-End Nest";
-    color: var(--nest);
+    color: #E0234E;
   }
 }
-
 .picture-profile {
   height: auto;
   width: 24rem;
@@ -188,23 +155,20 @@ text-shadow: 0 0 15px white;
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(0.95);
   }
-
   100% {
     transform: scale(1);
   }
 }
-
 .tecnologias {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.tecnologias--title{
+.tecnologias--title {
   margin-top: 5.5rem;
   font-size: 2rem;
   color: white;
@@ -220,14 +184,14 @@ text-shadow: 0 0 15px white;
 }
 
 .tecnologias--items img {
-height: 80px;
-width: auto;
+  height: 80px;
+  width: auto;
 }
 
 .tecnologias--items img:hover {
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
-  transform: scale(0.90);
+  transform: scale(0.9);
 }
 
 .tecnologias--explicacao {
@@ -257,42 +221,43 @@ width: auto;
 }
 
 #vue {
-      background-color: var(--vue);
+  background-color: #42B883;
 }
 
 #nuxt {
-      background-color: var(--nuxt);
+  background-color: #00DC82;
 }
 
 #nest {
-      background-color: var(--nest);
+  background-color: #E0234E;
 }
 
 #node {
-      background-color: var(--node);
+  background-color: #5FA04E;
 }
 
 #ts {
-      background-color: var(--ts);
+  background-color: #3178C6;
 }
 
 #js {
-      background-color: var(--js);
-      color: var(--bg-primary);
+  background-color: #F7DF1E;
+  color: #19191B;
 }
 
 #prisma {
-      background-color: var(--prisma);
-      color: var(--bg-primary);
+  background-color: #D2D2D2;
+  color: #19191B;
 }
 
 #postgres {
-      background-color: var(--postgres);
+  background-color: #336791;
 }
 
 #docker {
-      background-color: var(--docker);
+  background-color: #1D63ED;
 }
+
 .tecnologias--item.hidden {
   display: none;
   transition: 0.3s ease-in-out;
@@ -305,7 +270,62 @@ footer {
   padding: 1rem;
   color: white;
 }
-
 footer a {
-  color: var(--nuxt);
+  color: #00DC82;
 }
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  header nav {
+    padding: 5%;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav div.menu_burger {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0% 5%;
+  }
+  header {
+    padding: 5% 0%;
+  }
+  header nav ul {
+    display: none;
+  }
+  header nav div.menu_burger {
+    display: block;
+  }
+  main section.profile {
+    flex-direction: column;
+  }
+  main section.profile div.profile-name h1.name {
+    font-size: 3rem;
+  }
+  main section.tecnologias h2.tecnologias--title {
+    margin-top: 0;
+  }
+  main section.tecnologias div.tecnologias--items {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.75rem;
+    row-gap: 0.75rem;
+  }
+  main section.tecnologias div.tecnologias--items img {
+    height: 52px;
+    width: auto;
+  }
+  main section.tecnologias div.tecnologias--explicacao div.tecnologias--item p {
+    font-size: 1rem;
+  }
+  footer {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
