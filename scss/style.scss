@@ -30,6 +30,7 @@
         background-image: url('../assets/background.png');
         background-size: cover;
         background-repeat: repeat-y;
+        padding: 0 2rem;
     }
 
     header {
@@ -60,6 +61,7 @@
                 gap: 2rem;
                 font-size: 1.25rem;
                 color: white;
+
                 li {
                     a {
                         color: white;
@@ -71,21 +73,29 @@
             div.redes {
                 display: flex;
                 gap: 2.5rem;
-                
+
                 a {
                     color: white;
                     transition: text-shadow 0.3s ease-in-out;
                 }
             }
+
             div.menu_burger {
-                display:none;
+                display: none;
                 color: white;
                 cursor: pointer;
             }
         }
     }
 
-    .container, .container-nav {
+    main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+    .container,
+    .container-nav {
         display: flex;
         width: 100%;
         max-width: 1040px;
@@ -104,39 +114,33 @@
         text-shadow: 0 0 15px white;
     }
 
-    .menu_burger svg:hover, .redes svg:hover {
+    .menu_burger svg:hover,
+    .redes svg:hover {
         cursor: pointer;
         transition: scale 0.3s ease-in-out;
         scale: 1.10;
     }
 
     .profile {
+        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .column-name {
+    .profile-name {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .name,
-    .function {
-        color: white;
+        row-gap: 1rem;
     }
 
     .name {
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-style: normal;
-        font-size: 5.5rem;
+        font-size: clamp(4.75rem, 7rem, 6vw);
         line-height: 90%;
     }
 
     .function {
-        font-size: 2.25rem;
+        font-size: clamp(1.25rem, 2vw, 2rem);
         color: #BABABB;
     }
 
@@ -204,11 +208,9 @@
     .tecnologias {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
     }
 
     .tecnologias--title {
-        margin-top: 5.5rem;
         font-size: 2rem;
         color: white;
     }
@@ -302,6 +304,96 @@
         transition: 0.3s ease-in-out;
     }
 
+    .sobre_mim {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        column-gap: 2rem;
+
+        .card_profile {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid $nuxt;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 0 40px $nuxt-shadow;
+            row-gap: 2rem;
+
+            .card_profile--header {
+                display: flex;
+                flex-direction: row;
+                column-gap: 1rem;
+                align-items: center;
+
+                .sobre_mim--image {
+                    width: 20%;
+                    height: auto;
+                    border-radius: 200px;
+                }
+
+                .description {
+                    display: flex;
+                    flex-direction: column;
+
+                    .description--function {
+                        color: $prisma;
+                    }
+                }
+            }
+
+            .card_profile--content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                .chipsSoft,
+                .chipsHard {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                    text-wrap: nowrap;
+
+                    .chip {
+                        width: fit-content;
+                        padding: 0.5rem 1rem;
+                        border-radius: 1.5rem;
+                        background-color: $nuxt;
+                        color: $bg-primary;
+                        font-size: 0.75rem;
+                    }
+                }
+
+            }
+        }
+
+        .sobre_mim--text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            h2 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .sobre_mim--text p {
+        font-size: 1.25rem;
+    }
+
+    .sobre_mim--text a {
+        color: $nuxt;
+    }
+
     footer {
         display: flex;
         align-items: center;
@@ -314,17 +406,41 @@
         }
     }
 
-    @media screen and ( min-width: 480px) and (max-width:800px) {
+    @media screen and (min-width: 480px) and (max-width:800px) {
         header {
             nav {
                 padding: 5%;
+
                 ul {
                     display: none;
                 }
+
                 div.menu_burger {
                     display: block;
                 }
             }
+        }
+
+        section.profile {
+            .profile-name {
+                width: 50%;
+                height: 204px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                h1 {
+                    font-size: 4rem;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        section.sobre_mim {
+            flex-direction: column;
+            row-gap: 3rem;
         }
     }
 
@@ -332,30 +448,46 @@
         body {
             padding: 0% 5%;
         }
+
         header {
             padding: 5% 0%;
+
             nav {
                 ul {
                     display: none;
                 }
+
                 div.menu_burger {
                     display: block;
                 }
             }
         }
+
         main {
+            display: flex;
+            row-gap: 2rem;
+
             section.profile {
                 flex-direction: column;
                 div.profile-name {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
                     h1.name {
-                       font-size: 3rem; 
+                        font-size: 3rem;
+                    }
+                    h3 {
+                        font-size: 1.5rem;
                     }
                 }
             }
+
             section.tecnologias {
                 h2.tecnologias--title {
                     margin-top: 0;
                 }
+
                 div.tecnologias--items {
                     display: grid;
                     align-items: center;
@@ -364,20 +496,31 @@
                     grid-template-columns: 1fr 1fr 1fr;
                     column-gap: 0.75rem;
                     row-gap: 0.75rem;
+
                     img {
                         height: 52px;
-                        width: auto;    
+                        width: auto;
                     }
                 }
+
                 div.tecnologias--explicacao {
                     div.tecnologias--item {
-                        p{
+                        height: 348px;
+                        width: auto;
+
+                        p {
                             font-size: 1rem;
                         }
                     }
                 }
             }
+
+            section.sobre_mim {
+                flex-direction: column;
+                row-gap: 3rem;
+            }
         }
+
         footer {
             text-align: center;
         }
