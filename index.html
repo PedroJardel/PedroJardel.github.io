@@ -197,13 +197,18 @@
                 <div class="grid-projetos">
                 </div>
             </section>
-            <section class="contato" id="contato">
-                <form action="submit" class="contato">
-                    <input type="email" name="email" id="email">
-                    <label for="email">Digite seu e-mail</label>
-                    <input type="text" name="conteudo" id="conteudo">
+            <section class="contato poppins-regular" id="contato">
+                <h2 class="poppins-medium">Contato</h2>
+                <div class="area-form">
+                <form action="https://formspree.io/f/myzyrlry" class="form-contato" method="post">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Digite o seu e-mail aqui">
                     <label for="conteudo">Mensagem</label>
+                    <textarea type="text" name="message" id="conteudo" rows="8" placeholder="Digite aqui a sua mensagem"></textarea>
+                    <button type="submit" class="form-button poppins-semibold">Enviar</button>
                 </form>
+                <img src="assets/send_email.svg" alt="ilustração de um homem enviando um e-mail através de um avião de papel (metáfora)" class="form-image">
+            </div>
             </section>
         </main>
         <footer>

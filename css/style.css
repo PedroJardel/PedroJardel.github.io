@@ -370,7 +370,54 @@ a.card-projeto:hover {
 
 section.contato {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   color: white;
+}
+section.contato h2 {
+  font-size: 3rem;
+}
+section.contato div.area-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+section.contato div.area-form form.form-contato {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+section.contato div.area-form form.form-contato input,
+section.contato div.area-form form.form-contato textarea {
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+section.contato div.area-form form.form-contato label {
+  font-size: 1.25rem;
+}
+section.contato div.area-form form.form-contato button.form-button {
+  border: none;
+  background-color: #00DC82;
+  color: #19191B;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+}
+section.contato div.area-form form.form-contato button.form-button:hover {
+  cursor: pointer;
+  background-color: #027545;
+  color: white;
+  transition: 0.3s ease-out;
+}
+section.contato div.area-form img {
+  width: 50%;
+  height: auto;
 }
 
 footer {
@@ -413,6 +460,9 @@ footer a {
   }
   section.projetos div.grid-projetos {
     grid-template-columns: auto auto;
+  }
+  section.contato img.form-image {
+    display: none;
   }
 }
 @media screen and (max-width: 480px) {
@@ -474,11 +524,15 @@ footer a {
     flex-direction: column;
     row-gap: 3rem;
   }
-  main section.sobre_mim div.card_profile div.card_profile--header div.description h2, main section.sobre_mim div.card_profile div.card_profile--header div.description description--name {
+  main section.sobre_mim div.card_profile div.card_profile--header div.description h2,
+  main section.sobre_mim div.card_profile div.card_profile--header div.description description--name {
     font-size: 1.25rem;
   }
   section.projetos div.grid-projetos {
     grid-template-columns: auto;
+  }
+  section.contato img.form-image {
+    display: none;
   }
   footer {
     text-align: center;

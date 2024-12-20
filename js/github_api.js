@@ -6,10 +6,15 @@ const octokit = new Octokit()
 
 async function getApiGitHub() {
     try {
-        const response = await octokit.request('GET /users/{owner}/repos', {
-            owner: 'PedroJardel'
-        })
-        const data = response.data
+        if(localStorage.getItem("repositorios") === null) {
+            const response = await octokit.request('GET /users/{owner}/repos', {
+                owner: 'PedroJardel'
+            })
+            const data = response.data
+            localStorage.setItem("repositorios", JSON.stringify(data))
+        }
+
+        const data = JSON.parse((localStorage.getItem("repositorios")))
         data.map(async repository => {
             if (repository.id == 812747836 || repository.id == 862012363 || repository.id == 831200470 || repository.id == 859944296 || repository.id == 812438880 || repository.id == 826509309 || repository.id == 656477178 || repository.id == 885820506) {
                 const response = await octokit.request(`GET /repos/${repository.owner.login}/${repository.name}/languages`)
